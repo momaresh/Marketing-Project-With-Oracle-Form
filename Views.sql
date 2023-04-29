@@ -1,0 +1,51 @@
+CREATE OR REPLACE VIEW BOOK_VIEW AS
+    SELECT
+        PROD_ID,
+        PROD_NAME,
+        ITEM_PRICE,
+        AUTHOR,
+        LANG,
+        FILE_SIZE,
+        PAGES,
+        CATEGORY
+    FROM
+        PRODUCTS P
+        JOIN BOOKS B
+        ON P.PROD_ID = B.BOOK_ID;
+
+CREATE OR REPLACE VIEW COMPUTER_VIEW AS
+    SELECT
+        PROD_ID,
+        PROD_NAME,
+        ITEM_PRICE,
+        BRAND,
+        COLOR,
+        OS,
+        RAM_SIZE,
+        STORAGE_SIZE,
+        STORAGE_TYPE,
+        SCREEN_SIZE,
+        GRAPHIC_BRAND,
+        GRAPHIC_SIZE
+    FROM
+        PRODUCTS    P
+        JOIN ELECTRONICS E
+        ON P.PROD_ID = E.ELEC_ID JOIN COMPUTERS C
+        ON P.PROD_ID = C.COMPUTER_ID;
+
+CREATE OR REPLACE VIEW PHONE_VIEW AS
+    SELECT
+        PROD_ID,
+        PROD_NAME,
+        ITEM_PRICE,
+        BRAND,
+        COLOR,
+        OS,
+        RAM_SIZE,
+        STORAGE_SIZE,
+        CELLUAR_TECHNOLOGY
+    FROM
+        PRODUCTS    P
+        JOIN ELECTRONICS E
+        ON P.PROD_ID = E.ELEC_ID JOIN PHONES PH
+        ON P.PROD_ID = PH.PHONE_ID;
